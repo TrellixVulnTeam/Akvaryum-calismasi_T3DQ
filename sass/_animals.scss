@@ -1,0 +1,130 @@
+@mixin padding{
+    padding:0 1rem;
+}
+
+@mixin grid{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr); 
+}
+
+#animals{
+    color: $dark-color;
+    width: 100%;
+    h1{
+        text-align: center;
+        text-transform: uppercase; 
+    }
+
+    ul{
+        list-style:inside;
+    }
+
+    .animals-a{
+        @include grid();
+
+    &__penguen{
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        @include padding();
+    }
+    
+    &__information{
+        @include padding();
+        ul{
+            list-style:inside;
+        }
+    }
+    
+    }
+
+    .animals-b{
+        @include grid();
+        padding: 1rem;
+
+        &__kapibara{
+            border-left: 1px solid;
+            border-bottom: 1px solid;
+            @include padding();
+        }
+
+        &__information{
+            @include padding(); 
+            
+    }
+}  
+
+}
+
+#contact{
+    width: 100%;
+    
+    h1{
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__header{
+        .form-fields{
+            display: grid;
+            grid-template-areas: 
+            'name email'
+            'subject phone'
+            'message message'
+            'button button';
+            gap: 1rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+
+            .name{
+                grid-area: name;
+            }
+
+            .email{
+                grid-area: email;
+            }
+
+            .phone{
+                grid-area: phone;
+            }
+
+            .subject{
+                grid-area: subject;
+            }
+
+            .message{
+                grid-area: message;
+                height: 180px;
+            }
+
+            .btn-dark{
+                grid-area: button;
+            }
+
+            .input{
+                padding: .5rem 1rem;
+            }
+        }  
+    }
+}
+
+@media(max-width:1300px){
+    #animals{
+        width: 80ch;
+        font-size: 1rem;
+        
+    }
+}
+
+@media(max-width:768px){
+    #animals{
+        width: 60%;
+        .animals-a, .animals-b{
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 5px;
+            font-size: 1rem;
+        }
+
+        
+    }
+}

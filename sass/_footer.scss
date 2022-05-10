@@ -1,0 +1,53 @@
+@mixin flex {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+@mixin a {
+    color: #fff;
+    transition: all .7s;
+    text-align: center;
+    &:hover{
+        color: $secondary-color;
+    }
+}
+
+#main__footer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    
+    .links{
+        &__items{
+            @include flex();
+            li{
+                a{
+                    @include a();
+                }
+            }
+        }
+    }
+
+    .social-media{
+        padding-top: .5rem;
+        &__items{
+            @include flex();
+
+            li{
+                a{
+                    @include a();
+                }
+            }
+        }
+    }
+
+    .copy{
+        text-align: center;
+        font-size: 1rem;
+        display: block;
+        color: $white-color;
+        grid-column: span 2;
+        text-transform: uppercase;
+    }
+}
