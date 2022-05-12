@@ -14,9 +14,9 @@
 }
 
 #main__footer{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     
     .links{
         &__items{
@@ -49,5 +49,6 @@
         color: $white-color;
         grid-column: span 2;
         text-transform: uppercase;
+        width: 100%;
     }
 }
